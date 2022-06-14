@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#80383838"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:clipToPadding="false"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp">
+
+        <com.arash.altafi.swipe.SwipeButton
+            android:id="@+id/swipe_btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:background_swipe_color="@drawable/back_slide"
+            app:button_bottom_padding="20dp"
+            app:button_image_height="90dp"
+            app:button_image_width="140dp"
+            app:button_left_padding="20dp"
+            app:button_right_padding="20dp"
+            app:button_top_padding="20dp"
+            app:has_activate_state="true"
+            app:initial_state="disabled"
+            app:inner_date="2022/06/14"
+            app:inner_day="Tuesday"
+            app:inner_text_bottom_padding="18dp"
+            app:inner_text_color="#000"
+            app:inner_text_size="16sp"
+            app:inner_text_top_padding="18dp"
+            app:inner_time="01:53"
+            app:is_rtl="false"
+            app:text_sliding="Logout"
+            app:text_sliding_swipe="Swipe To Right" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:clipToPadding="false"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp">
+
+        <com.arash.altafi.swipe.SwipeButton
+            android:id="@+id/swipe_btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:background_swipe_color="@drawable/back_slide_login"
+            app:button_bottom_padding="20dp"
+            app:button_image_height="90dp"
+            app:button_image_width="140dp"
+            app:button_left_padding="20dp"
+            app:button_right_padding="20dp"
+            app:button_top_padding="20dp"
+            app:has_activate_state="true"
+            app:initial_state="disabled"
+            app:inner_date="2022/06/14"
+            app:inner_day="Tuesday"
+            app:inner_text_bottom_padding="18dp"
+            app:inner_text_color="#000"
+            app:inner_text_size="16sp"
+            app:inner_text_top_padding="18dp"
+            app:inner_time="01:53"
+            app:is_rtl="true"
+            app:text_sliding="Login"
+            app:text_sliding_swipe="Swipe To Left" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
