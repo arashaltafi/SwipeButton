@@ -1,4 +1,5 @@
 # SwipeButton
+[![](https://jitpack.io/v/arashaltafi/SwipeButton.svg)](https://jitpack.io/#arashaltafi/SwipeButton)
 
 [SwipeButton](https://github.com/arashaltafi/SwipeButton) is a Custom Swipe For Left To Right And Right To Left
 
