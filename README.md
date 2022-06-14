@@ -23,3 +23,4 @@ allprojects {
 	}
 }
 ```
+[![](https://jitpack.io/v/arashaltafi/SwipeButton.svg)](https://jitpack.io/#arashaltafi/SwipeButton)
