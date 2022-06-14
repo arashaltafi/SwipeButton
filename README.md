@@ -10,17 +10,16 @@
 
 Dependency:
 ```groovy
-	dependencies {
-	        implementation 'com.github.arashaltafi:SwipeButton:1.0'
-	}
+dependencies {
+	implementation 'com.github.arashaltafi:SwipeButton:1.0'
+}
   ```
   
-  ```groovy
-	allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
+```groovy
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
 	}
-  ```
-
+}
+```
