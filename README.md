@@ -1,99 +1,26 @@
-# Stetho [![Build Status](https://travis-ci.org/facebook/stetho.svg?branch=master)](https://travis-ci.org/facebook/stetho)
+# SwipeButton
 
-[Stetho](https://facebook.github.io/stetho) is a sophisticated debug bridge for Android applications. When enabled,
-developers have access to the Chrome Developer Tools feature natively part of
-the Chrome desktop browser. Developers can also choose to enable the optional
-`dumpapp` tool which offers a powerful command-line interface to application
-internals.
+[SwipeButton](https://github.com/arashaltafi/SwipeButton) is a Custom Swipe For Left To Right And Right To Left
 
-Once you complete the set-up instructions below, just start your app and point
-your laptop browser to `chrome://inspect`.  Click the "Inspect" button to
-begin.
+## Screenshots
+
+![App Screenshot](https://cdn.dribbble.com/users/4393223/screenshots/18481406/media/15633bb1ef9d31c2c77175c92e3aee51.png?compress=1&resize=1200x900)
 
 ## Set-up
 
-### Download
-Download [the latest JARs](https://github.com/facebook/stetho/releases/latest) or grab via Gradle:
+Dependency:
 ```groovy
-implementation 'com.facebook.stetho:stetho:1.6.0'
-```
-or Maven:
-```xml
-<dependency>
-  <groupId>com.facebook.stetho</groupId>
-  <artifactId>stetho</artifactId>
-  <version>1.6.0</version>
-</dependency>
-```
+	dependencies {
+	        implementation 'com.github.arashaltafi:SwipeButton:Tag'
+	}
+  ```
+  
+  ```groovy
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+  ```
 
-Only the main `stetho` dependency is strictly required; however, you may also wish to use one of the network helpers:
-
-```groovy
-implementation 'com.facebook.stetho:stetho-okhttp3:1.6.0'
-```
-or:
-```groovy
-implementation 'com.facebook.stetho:stetho-urlconnection:1.6.0'
-```
-
-You can also enable a JavaScript console with:
-
-```groovy
-implementation 'com.facebook.stetho:stetho-js-rhino:1.6.0'
-```
-For more details on how to customize the JavaScript runtime see [stetho-js-rhino](stetho-js-rhino/).
-
-### Putting it together
-Integrating with Stetho is intended to be seamless and straightforward for
-most existing Android applications.  There is a simple initialization step
-which occurs in your `Application` class:
-
-```java
-public class MyApplication extends Application {
-  public void onCreate() {
-    super.onCreate();
-    Stetho.initializeWithDefaults(this);
-  }
-}
-```
-Also ensure that your `MyApplication` Java class is registered in your `AndroidManifest.xml` file, otherwise you will not see an "Inspect" button in `chrome://inspect/#devices` :
-
-```xml
-<manifest
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        ...>
-        <application
-                android:name="MyApplication"
-                ...>
-         </application>
-</manifest>                
-```
-
-This brings up most of the default configuration but does not enable some
-additional hooks (most notably, network inspection).  See below for specific
-details on individual subsystems.
-
-### Enable network inspection
-If you are using the popular [OkHttp](https://github.com/square/okhttp)
-library at the 3.x release, you can use the
-[Interceptors](https://github.com/square/okhttp/wiki/Interceptors) system to
-automatically hook into your existing stack.  This is currently the simplest
-and most straightforward way to enable network inspection:
-
-```java
-new OkHttpClient.Builder()
-    .addNetworkInterceptor(new StethoInterceptor())
-    .build()
-```
-
-Note that okhttp 2.x will work as well, but with slightly different syntax and you must use the `stetho-okhttp` artifact (not `stetho-okhttp3`).
-
-As interceptors can modify the request and response, add the Stetho interceptor after all others to get an accurate view of the network traffic.
-
-If you are using `HttpURLConnection`, you can use `StethoURLConnectionManager`
-to assist with integration though you should be aware that there are some
-caveats with this approach.  In particular, you must explicitly add
-`Accept-Encoding: gzip` to the request headers and manually handle compressed
-responses in order for Stetho to report compressed payload sizes.
-
-See the [`stetho-sample` project](stetho-sample) for more details.
