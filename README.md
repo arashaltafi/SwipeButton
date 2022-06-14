@@ -11,7 +11,7 @@
 Dependency:
 ```groovy
 	dependencies {
-	        implementation 'com.github.arashaltafi:SwipeButton:Tag'
+	        implementation 'com.github.arashaltafi:SwipeButton:1.0'
 	}
   ```
   
