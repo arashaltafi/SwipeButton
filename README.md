@@ -97,32 +97,3 @@ caveats with this approach.  In particular, you must explicitly add
 responses in order for Stetho to report compressed payload sizes.
 
 See the [`stetho-sample` project](stetho-sample) for more details.
-
-## Going further
-
-### Custom dumpapp plugins
-Custom plugins are the preferred means of extending the `dumpapp` system and
-can be added easily during configuration.  Simply replace your configuration
-step as such:
-
-```java
-Stetho.initialize(Stetho.newInitializerBuilder(context)
-    .enableDumpapp(new DumperPluginsProvider() {
-      @Override
-      public Iterable<DumperPlugin> get() {
-        return new Stetho.DefaultDumperPluginsBuilder(context)
-            .provide(new MyDumperPlugin())
-            .finish();
-      }
-    })
-    .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(context))
-    .build())
-```
-
-See the [`stetho-sample` project](stetho-sample) for more details.
-
-## Improve Stetho!
-See the [CONTRIBUTING.md](CONTRIBUTING.md) file for how to help out.
-
-## License
-Stetho is MIT-licensed. See LICENSE file for more details.
