@@ -24,3 +24,19 @@ allprojects {
 	}
 }
 ```
+
+## Initialize
+
+```groovy
+swipeBtnLogout.setOnActiveListener(object : OnActiveListener {
+	override fun onActive() {
+		Toast.makeText(this@MainActivity, "onActive", Toast.LENGTH_SHORT).show()
+	}
+})
+
+swipeBtnLogin.setOnStateChangeListener(object : OnStateChangeListener {
+	override fun onStateChange(active: Boolean) {
+		Toast.makeText(this@MainActivity, "onStateChange $active", Toast.LENGTH_SHORT).show()
+	}
+})
+```
