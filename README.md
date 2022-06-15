@@ -46,7 +46,7 @@ Xml:
 
 ```groovy
 
-//Logout
+<!--    Logout  -->
 <com.arash.altafi.swipe.SwipeButton
 	android:id="@+id/swipe_btn_logout"
 	android:layout_width="match_parent"
@@ -71,7 +71,7 @@ Xml:
 	app:text_sliding="Logout"
 	app:text_sliding_swipe="Swipe To Right" />
 
-//Login
+<!--    Login   -->
 <com.arash.altafi.swipe.SwipeButton
 	android:id="@+id/swipe_btn_login"
 	android:layout_width="match_parent"
