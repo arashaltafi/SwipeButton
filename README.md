@@ -27,6 +27,7 @@ allprojects {
 
 ## Initialize
 
+Kotlin:
 ```groovy
 swipeBtnLogout.setOnActiveListener(object : OnActiveListener {
 	override fun onActive() {
@@ -39,4 +40,31 @@ swipeBtnLogin.setOnStateChangeListener(object : OnStateChangeListener {
 		Toast.makeText(this@MainActivity, "onStateChange $active", Toast.LENGTH_SHORT).show()
 	}
 })
+```
+
+Xml:
+```groovy
+<com.arash.altafi.swipe.SwipeButton
+	android:id="@+id/swipe_btn_logout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	app:background_swipe_color="@drawable/back_slide"
+	app:button_bottom_padding="20dp"
+	app:button_image_height="90dp"
+	app:button_image_width="140dp"
+	app:button_left_padding="20dp"
+	app:button_right_padding="20dp"
+	app:button_top_padding="20dp"
+	app:has_activate_state="true"
+	app:initial_state="disabled"
+	app:inner_date="2022/06/14"
+	app:inner_day="Tuesday"
+	app:inner_text_bottom_padding="18dp"
+	app:inner_text_color="#000"
+	app:inner_text_size="16sp"
+	app:inner_text_top_padding="18dp"
+	app:inner_time="01:53"
+	app:is_rtl="false"
+	app:text_sliding="Logout"
+	app:text_sliding_swipe="Swipe To Right" />
 ```
