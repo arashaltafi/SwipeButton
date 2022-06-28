@@ -241,7 +241,7 @@ class SwipeButton : RelativeLayout {
                             collapseButton()
                         } else {
                             if (binding.flSliding.layoutDirection == LAYOUT_DIRECTION_RTL) {
-                                if (binding.llSwipe.x + binding.llSwipe.width < width * 0.5) {
+                                if (binding.llSwipe.x < width * 0.1) {
                                     if (hasActivationState) {
                                         expandButton()
                                     } else if (onActiveListener != null) {

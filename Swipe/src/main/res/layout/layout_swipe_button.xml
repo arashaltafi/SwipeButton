@@ -81,7 +81,7 @@
                 android:id="@+id/view"
                 android:layout_width="120dp"
                 android:layout_height="1dp"
-                android:textColor="#000"/>
+                android:background="#000"/>
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
