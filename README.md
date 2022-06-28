@@ -12,7 +12,7 @@
 Dependency:
 ```groovy
 dependencies {
-	implementation 'com.github.arashaltafi:SwipeButton:1.3'
+	implementation 'com.github.arashaltafi:SwipeButton:1.5'
 }
   ```
   
