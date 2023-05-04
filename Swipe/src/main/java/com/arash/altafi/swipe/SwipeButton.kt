@@ -252,7 +252,7 @@ class SwipeButton : RelativeLayout {
                                     moveButtonBack()
                                 }
                             } else {
-                                if (binding.llSwipe.x + binding.llSwipe.width > width * 0.8) {
+                                if (binding.llSwipe.x + binding.llSwipe.width > width * 0.9) {
                                     if (hasActivationState) {
                                         expandButton()
                                     } else
@@ -354,8 +354,25 @@ class SwipeButton : RelativeLayout {
             }
         })
         animatorSet.playTogether(positionAnimator, widthAnimator)
-//        animatorSet.duration = 10
+        animatorSet.duration = 0
         animatorSet.start()
+        moveButtonBack()
+    }
+
+    private fun active() {
+        isActive = true
+        binding.root.postDelayed({
+            isActive = true
+            if (onStateChangeListener != null) {
+                onStateChangeListener!!.onStateChange(isActive)
+            }
+            if (onActiveListener != null) {
+                onActiveListener!!.onActive()
+            }
+            binding.root.postDelayed({
+                collapseButton()
+            }, 500)
+        }, 500)
     }
 
     @SuppressLint("ObjectAnimatorBinding")
